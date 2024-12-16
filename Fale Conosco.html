@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/flor.jpg" type=" imagem/x-icon">
+    <meta name="description" content="Imobiliária Albano - Encontre seu imóvel dos sonhos com facilidade.">
+    <meta name="author" content="Imobiliária Albano">
+    <meta name="keywords" content="imobiliária, imóveis, casas, apartamentos, venda, aluguel">
+    <title>Imobiliária Albano</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav style="display: flex; align-items: center; justify-content: space-between; background: #73c48e; padding: 1rem;">
+            <!-- Logo e Nome -->
+            <div style="display: flex; align-items: center;">
+                <img src="img/logo IMOB ALBANO.webp" alt="Logo Imobiliária Albano" style="height: 50px; margin-right: 10px;">
+                <h1 style="color: white; font-size: 1.5rem; margin: 0;">Imobiliária Albano</h1>
+            </div>
+        <nav>
+            <ul id="navbar">
+                <li><a href="#home" target="_blank">Início</a></li>
+                <li><a href="#cadastreseuimovel" target="_blank">Cadastre Seu Imóvel</a></li>
+                <li><a href="#venda" target="_blank">Venda</a></li>
+                <li><a href="#locacao" target="_blank">Locação</a></li>
+                <li><a href="#faleconosco.html"target="_blank">Fale Conosco</a></li>
+            </ul>
+            <button id="menu-btn">☰</button>
+        </nav>
+    </header>
+
+         
+
+        <section id="contato">
+            <h2>Fale Conosco</h2>
+            <style>
+                h2{
+                    text-align: center;
+                    color: #73c48e;
+                    margin: 30px;
+                    font-size: 40px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    }
+            </style>
+            <div style="display: flex; justify-content: center;">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345092337!2d-122.41941548526042!3d37.77492927975906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064eb48c9f5%3A0x1c2caa2ed1e10b0b!2sGolden%20Gate%20Bridge!5e0!3m2!1sen!2sus!4v1604155938683!5m2!1sen!2sus" 
+                    width="70%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h4>&copy; 2024 Imobiliária Albano. Todos os direitos reservados.</h4>
+    </footer>
+</body>
+</html>
+
+<!-- CSS (styles.css) -->
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+    }
+
+    
+        /* Header */
+        header nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #73c48e;
+            padding: 1rem;
+        }
+
+        header nav .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        header nav .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        header nav h1 {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        /* Navbar */
+        #navbar {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #navbar li {
+            margin: 0 1rem;
+        }
+
+        #navbar a {
+            color: white;
+            text-decoration: none;
+        }
+
+    #menu-btn {
+        display: none;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+
+      
+
+    footer {
+        text-align: center;
+        padding: 1rem;
+        background: #333;
+        color: white;
+        margin-top: 2rem;
+    }
+
+    
+</style>
+
+<!-- JavaScript (script.js) -->
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const sidebar = document.getElementById('sidebar');
+
+    menuBtn.addEventListener('click', () => {
+        sidebar.style.display = sidebar.style.display === 'block' ? 'none' : 'block';
+    });
+</script>

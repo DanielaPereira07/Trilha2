@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/flor.jpg" type=" imagem/x-icon">
+    <meta name="description" content="Imobiliária Albano - Encontre seu imóvel dos sonhos com facilidade.">
+    <meta name="author" content="Imobiliária Albano">
+    <meta name="keywords" content="imobiliária, imóveis, casas, apartamentos, venda, aluguel">
+    <title>Imobiliária Albano</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+       
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+    }
+
+        /* Header */
+        header nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #73c48e;
+            padding: 1rem;
+        }
+
+        header nav .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        header nav .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        header nav h1 {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        /* Navbar */
+        #navbar {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #navbar li {
+            margin: 0 1rem;
+        }
+
+        #navbar a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Formulário */
+        #cadastreseuimovel {
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        #cadastreseuimovel h2 {
+            text-align: center;
+            color: #73c48e;
+        }
+
+        #cadastreseuimovel p {
+            text-align: center;
+        }
+
+        #formCadastro {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        #formCadastro label {
+            font-weight: bold;
+        }
+
+        #formCadastro input,
+        #formCadastro select,
+        #formCadastro textarea {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #formCadastro button {
+            padding: 0.75rem;
+            background-color: #73c48e;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        #mensagem {
+            text-align: center;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: white;
+            margin-top: 2rem;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Logo e Nome -->
+            <div class="logo">
+                <img src="img/logo IMOB ALBANO.webp" alt="Logo Imobiliária Albano">
+                <h1>Imobiliária Albano</h1>
+            </div>
+
+            <!-- Menu Navegação -->
+            <ul id="navbar">
+                <li><a href="Página Inicial" target="_blank">Início</a></li>
+                <li><a href="Cadastre Seu Imóvel.html" target="_blank">Cadastre Seu Imóvel</a></li>
+                <li><a href="venda.html" target="_blank">Venda</a></li>
+                <li><a href="Locação.html" target="_blank">Locação</a></li>
+                <li><a href="Fale Conosco.html" target="_blank">Fale Conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="cadastreseuimovel">
+        <h2>Cadastro do Seu Imóvel</h2>
+        <p>Preencha os dados abaixo para cadastrar seu imóvel para venda ou locação.</p>
+        <form id="formCadastro" onsubmit="return enviarFormulario(event)">
+            <!-- Nome -->
+            <label for="nome">Seu Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+            <!-- Telefone -->
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+
+            <!-- Email -->
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+            <!-- Tipo do Imóvel -->
+            <label for="tipo">Tipo de Imóvel</label>
+            <select id="tipo" name="tipo" required>
+                <option value="">Selecione...</option>
+                <option value="Casa">Casa</option>
+                <option value="Apartamento">Apartamento</option>
+                <option value="Chácara">Chácara</option>
+                <option value="Cobertura">Cobertura</option>
+                <option value="Outro">Outro</option>
+            </select>
+
+            <!-- Preço -->
+            <label for="preco">Preço (R$)</label>
+            <input type="number" id="preco" name="preco" placeholder="Digite o valor" required>
+
+            <!-- Descrição -->
+            <label for="descricao">Descrição do Imóvel</label>
+            <textarea id="descricao" name="descricao" rows="4" placeholder="Descreva os detalhes do imóvel..." required></textarea>
+
+            <!-- Botão de Envio -->
+            <button type="submit">Enviar Cadastro</button>
+        </form>
+        <div id="mensagem"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Imobiliária Albano. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault(); // Impede o envio do formulário padrão
+
+            // Simulando sucesso ou erro
+            let sucesso = Math.random() > 0.5; // Simulação de sucesso (50% de chance)
+
+            let mensagemElement = document.getElementById('mensagem');
+            
+            if (sucesso) {
+                mensagemElement.textContent = "Mensagem enviada com sucesso!";
+                mensagemElement.style.color = "green"; // Cor verde para sucesso
+            } else {
+                mensagemElement.textContent = "Ocorreu um erro ao enviar a mensagem. Tente novamente.";
+                mensagemElement.style.color = "red"; // Cor vermelha para erro
+            }
+        }
+    </script>
+</body>
+</html>
